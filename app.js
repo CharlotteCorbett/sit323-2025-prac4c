@@ -302,8 +302,6 @@ app.get("/maximum", (req,res)=>{
       }
 });
 
-
-
 app.get("/randomrange", (req,res)=>{
     try{
       // convert input from string to number
@@ -329,8 +327,11 @@ app.get("/squareroot", (req,res)=>{
       // convert input from string to number
     const n1= parseFloat(req.query.n1);
     
-    // Call reusable function that checks whether n1 and n2 are a Nan
-    isNumberNan(n1);
+    // Check whether input is a NaN
+    if (isNaN(n1)) {
+      logger.error("n1 is incorrectly defined");
+      throw new Error("n1 incorrectly defined");
+  }
 
     // Leave a log reporting that n1 and n2 have been received for the squareroot service
     logger.info('Parameters '+n1+' and received for square root service');
