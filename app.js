@@ -75,11 +75,6 @@ const maximum= (n1, n2) => {
     return Math.max(n1, n2);
 }
 
-// Create constant that returns a random number between 0 and 1
-const randomNumber= (n1) => {
-    return Math.random(n1);
-}
-
 // Create constant that returns a random number within a range of number 1 and number 2 (eg: random number in range (10, 20))
 const randomRange= (n1, n2) => {
     return Math.floor(Math.random() * (n2 - n1 + 1)) + n1;
